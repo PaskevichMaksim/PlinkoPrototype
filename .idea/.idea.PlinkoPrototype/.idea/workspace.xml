@@ -5,26 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="555e5f03-4f89-44b7-a45c-34d96bace5b3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PlinkoPrototype/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PlinkoPrototype/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Basket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Basket.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Basket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BasketSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BasketSpawner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Stars Small_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Stars Small_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Stars-Big_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Textures/Stars-Big_1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BackgroundSetup.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BasketSpawner.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PinPlacer.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScoreManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SoundController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2ijww9vGT6o6UJbjFE631jjwbHL" />
   <component name="ProjectViewState">
@@ -99,6 +92,7 @@
       <updated>1720017529686</updated>
       <workItem from="1720017530780" duration="2507000" />
       <workItem from="1720021126513" duration="1948000" />
+      <workItem from="1720041324507" duration="5675000" />
     </task>
     <servers />
   </component>
