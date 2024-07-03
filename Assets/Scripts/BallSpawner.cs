@@ -24,7 +24,7 @@ public class BallSpawner : MonoBehaviour
 
   private void SpawnBall()
   {
-    const float OFFSET = 2f;
+    const float OFFSET = .5f;
     Vector3 spawnPosition = new Vector3(0, PinPlacer.Instance.GetTopPosition() + OFFSET, 0);
 
     GameObject ball = ObjectPool.Instance.GetObject();

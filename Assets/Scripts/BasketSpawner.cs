@@ -12,7 +12,7 @@ public class BasketSpawner : MonoBehaviour
 
   private void OnDestroy()
   {
-    PinPlacer.Instance.OnPinsPlaced -=SpawnBaskets;
+    PinPlacer.Instance.OnPinsPlaced -= SpawnBaskets;
   }
 
   private void SpawnBaskets()
@@ -21,8 +21,7 @@ public class BasketSpawner : MonoBehaviour
     float spacingX = basketScale * 2f;
     int basketCount = PinPlacer.Instance.Rows + 1;
 
-    ScreenScaler screenScaler = ScreenScaler.Instance;
-    float startY = PinPlacer.Instance.GetTopPosition() - screenScaler.ScreenHeight / 2 + basketScale - basketScale * 1.5f;
+    float startY = PinPlacer.Instance.GetBottomPosition() - basketScale;
 
     for (int i = 0; i < basketCount; i++)
     {
