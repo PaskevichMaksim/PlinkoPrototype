@@ -23,8 +23,7 @@ public class PinPlacer : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-        }
-        else
+        } else
         {
             Destroy(gameObject);
         }
@@ -32,6 +31,11 @@ public class PinPlacer : MonoBehaviour
 
     private void Start()
     {
+        if (_rows % 2 != 0)
+        {
+            _rows++;
+        }
+        
         Initialize();
     }
 
