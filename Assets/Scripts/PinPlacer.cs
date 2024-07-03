@@ -1,7 +1,13 @@
+using System;
 using UnityEngine;
+
 
 public class PinPlacer : MonoBehaviour
 {
+  public static PinPlacer Instance { get; private set; }
+  
+  public event  Action OnPinsPlaced;
+  
   private const float SPACING_MULTIPLIER = 2f;
   
   [SerializeField]
@@ -10,6 +16,21 @@ public class PinPlacer : MonoBehaviour
   private int _rows = 10;
 
   private float _pinScale;
+  private float _topPosition;
+
+  public int Rows => _rows;
+
+
+  private void Awake()
+  {
+    if (Instance == null)
+    {
+      Instance = this;
+    } else
+    {
+      Destroy(gameObject);
+    }
+  }
 
   private void Start()
   {
@@ -20,6 +41,7 @@ public class PinPlacer : MonoBehaviour
   {
     CalculatePinScale();
     PlacePins();
+    OnPinsPlaced?.Invoke();
   }
 
   private void CalculatePinScale()
@@ -49,5 +71,17 @@ public class PinPlacer : MonoBehaviour
         pin.transform.localScale = new Vector3(_pinScale, _pinScale, 1.0f);
       }
     }
+
+    _topPosition = startY + spacingY;
+  }
+
+  public float GetPinScale()
+  {
+    return _pinScale;
+  }
+
+  public float GetTopPosition()
+  {
+    return _topPosition;
   }
 }
