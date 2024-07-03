@@ -18,22 +18,10 @@ public class Basket : MonoBehaviour, IAnimatable
 
   private bool _isAnimating;
 
-  private void Start()
-  {
-    UpdateBasket();
-  }
-
   public void UpdateBasket()
   {
-    if (_spriteRenderer != null)
-    {
-      _spriteRenderer.color = GetColorBasedOnLerpFactor();
-    }
-
-    if (_pointsText != null)
-    {
-      _pointsText.text = Points.ToString();
-    }
+    _spriteRenderer.color = GetColorBasedOnLerpFactor();
+    _pointsText.text = Points.ToString();
   }
 
   private Color GetColorBasedOnLerpFactor()
@@ -47,6 +35,7 @@ public class Basket : MonoBehaviour, IAnimatable
     {
       ObjectPool.Instance.ReturnObject(ball.gameObject);
       SoundController.Instance.PlaySound(SoundController.SoundType.Basket);
+      ScoreManager.Instance.AddPoints(Points);
     }
 
     if (!_isAnimating)
