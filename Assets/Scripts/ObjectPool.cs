@@ -6,12 +6,11 @@ public class ObjectPool : MonoBehaviour
   public static ObjectPool Instance { get; private set; }
 
   private readonly Queue<GameObject> _objectPool = new Queue<GameObject>();
-  
+
   [SerializeField]
   private GameObject _objectPrefab;
   [SerializeField]
   private int _initialPoolSize = 15;
-    
 
   private void Awake()
   {
@@ -40,10 +39,12 @@ public class ObjectPool : MonoBehaviour
     {
       GameObject obj = _objectPool.Dequeue();
       obj.SetActive(true);
+      InitializeObject(obj);
       return obj;
     } else
     {
       GameObject obj = Instantiate(_objectPrefab);
+      InitializeObject(obj);
       return obj;
     }
   }
@@ -52,5 +53,14 @@ public class ObjectPool : MonoBehaviour
   {
     obj.SetActive(false);
     _objectPool.Enqueue(obj);
+  }
+
+  private void InitializeObject(GameObject obj)
+  {
+    Ball ball = obj.GetComponent<Ball>();
+    if (ball != null)
+    {
+      ball.Initialize();
+    }
   }
 }

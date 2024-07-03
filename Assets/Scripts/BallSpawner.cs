@@ -5,7 +5,7 @@ public class BallSpawner : MonoBehaviour
   public static BallSpawner Instance { get; private set; }
   
   [SerializeField]
-  private float _initialForce = 2f;
+  private float _initialForce = 1f;
   
   private void Awake()
   {
@@ -20,8 +20,7 @@ public class BallSpawner : MonoBehaviour
   
   public void SpawnBall()
   {
-    const float OFFSET = .5f;
-    Vector3 spawnPosition = new Vector3(0, PinPlacer.Instance.GetTopPosition() + OFFSET, 0);
+    Vector3 spawnPosition = new Vector3(0, PinPlacer.Instance.GetTopPosition(), 0);
 
     GameObject ball = ObjectPool.Instance.GetObject();
     ball.transform.position = spawnPosition;

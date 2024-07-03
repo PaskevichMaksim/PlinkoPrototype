@@ -12,6 +12,11 @@ public class Ball : MonoBehaviour
     PinPlacer.Instance.OnPinsPlaced -= SetScale;
   }
 
+  public void Initialize()
+  {
+    SetScale();
+  }
+
   private void SetScale()
   {
     float ballScale = PinPlacer.Instance.GetPinScale() * 2f;

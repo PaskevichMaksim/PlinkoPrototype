@@ -1131,7 +1131,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1145,7 +1145,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 50, y: 0.1}
+  m_Size: {x: 20, y: 0.1}
   m_EdgeRadius: 0
 --- !u!4 &1241364718
 Transform:
@@ -1379,7 +1379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8eb05c80b56956f43ab97e30f564cb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnInterval: 2
   _initialForce: 2
 --- !u!4 &1485634007
 Transform:
