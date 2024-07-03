@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-  private void OnEnable()
+  private void Start()
   {
     PinPlacer.Instance.OnPinsPlaced += SetScale;
   }
 
-  private void OnDisable()
+  private void OnDestroy()
   {
     PinPlacer.Instance.OnPinsPlaced -= SetScale;
   }
