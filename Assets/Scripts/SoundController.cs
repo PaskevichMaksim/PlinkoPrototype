@@ -1,16 +1,7 @@
 using UnityEngine;
 
-public class SoundController : MonoBehaviour
+public class SoundController : Singleton<SoundController>
 {
-  public enum SoundType
-  {
-    Pin,
-    Basket,
-    None
-  }
-  
-  public static SoundController Instance { get; private set; }
-
   [SerializeField]
   private AudioClip _pinHitSound;
   [SerializeField]
@@ -22,22 +13,15 @@ public class SoundController : MonoBehaviour
 
   private void Awake()
   {
-    if (Instance == null)
-    {
-      Instance = this;
-      _audioSource = gameObject.AddComponent<AudioSource>();
-    } else
-    {
-      Destroy(gameObject);
-    }
+    _audioSource = gameObject.AddComponent<AudioSource>();
   }
 
-  public void PlaySound(SoundType soundType)
+  public void PlaySound(Enums.SoundType soundType)
   {
-    if (soundType == SoundType.Basket)
+    if (soundType == Enums.SoundType.Basket)
     {
       _audioSource.PlayOneShot(_basketHitSound, _fxVolume);
-    }else if (soundType == SoundType.Pin)
+    }else if (soundType == Enums.SoundType.Pin)
     {
       _audioSource.PlayOneShot(_pinHitSound, _fxVolume);
     }

@@ -18,7 +18,7 @@ public class Pin : MonoBehaviour, IAnimatable
     }
 
     Animate();
-    SoundController.Instance.PlaySound(SoundController.SoundType.Pin);
+    SoundController.Instance.PlaySound(Enums.SoundType.Pin);
   }
 
   private void Animate()

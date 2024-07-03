@@ -34,7 +34,7 @@ public class Basket : MonoBehaviour, IAnimatable
     if (collision.gameObject.TryGetComponent(out Ball ball))
     {
       ObjectPool.Instance.ReturnObject(ball.gameObject);
-      SoundController.Instance.PlaySound(SoundController.SoundType.Basket);
+      SoundController.Instance.PlaySound(Enums.SoundType.Basket);
       ScoreManager.Instance.AddPoints(Points);
     }
 

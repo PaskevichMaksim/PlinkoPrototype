@@ -1,22 +1,13 @@
 using UnityEngine;
 
-public class ScreenScaler : MonoBehaviour
+public class ScreenScaler : Singleton<ScreenScaler>
 {
-  public static ScreenScaler Instance { get; private set; }
-
   public float ScreenHeight { get; private set; }
   public float ScreenWidth { get; private set; }
 
   private void Awake()
   {
-    if (Instance == null)
-    {
-      Instance = this;
-      CalculateScreenSize();
-    } else
-    {
-      Destroy(gameObject);
-    }
+    CalculateScreenSize();
   }
 
   private void CalculateScreenSize()

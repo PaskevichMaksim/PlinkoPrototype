@@ -1,27 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class ObjectPool : Singleton<ObjectPool>
 {
-  public static ObjectPool Instance { get; private set; }
-
   private readonly Queue<GameObject> _objectPool = new Queue<GameObject>();
 
   [SerializeField]
   private GameObject _objectPrefab;
   [SerializeField]
   private int _initialPoolSize = 15;
-
-  private void Awake()
-  {
-    if (Instance == null)
-    {
-      Instance = this;
-    } else
-    {
-      Destroy(gameObject);
-    }
-  }
 
   private void Start()
   {

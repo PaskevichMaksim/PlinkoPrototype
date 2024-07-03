@@ -1,36 +1,21 @@
 using System;
 using UnityEngine;
 
-public class PinPlacer : MonoBehaviour
+public class PinPlacer : Singleton<PinPlacer>
 {
-    public static PinPlacer Instance { get; private set; }
-    
     public event Action OnPinsPlaced;
 
     [SerializeField]
     private Pin _pinPrefab;
     [SerializeField]
     private int _rows = 10;
-    [SerializeField]
-    private float pinScaleMultiplier = 1.2f; // Множник для збільшення розміру пінів
 
     private float _pinScale;
     private float _topPosition;
     private float _botPosition;
 
     public int Rows => _rows;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        } else
-        {
-            Destroy(gameObject);
-        }
-    }
-
+    
     private void Start()
     {
         if (_rows % 2 != 0)
@@ -52,7 +37,7 @@ public class PinPlacer : MonoBehaviour
     {
         ScreenScaler screenScaler = ScreenScaler.Instance;
 
-        _pinScale = screenScaler.ScreenWidth / (_rows + 2) * .4f* pinScaleMultiplier;
+        _pinScale = screenScaler.ScreenWidth / (_rows + 2) * .4f;
 
         float aspectRatio = screenScaler.ScreenHeight / screenScaler.ScreenWidth;
 
