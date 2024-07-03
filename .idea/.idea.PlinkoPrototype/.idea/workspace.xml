@@ -12,6 +12,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/BallSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BasketSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ObjectPool.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PinPlacer.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2ijww9vGT6o6UJbjFE631jjwbHL" />
@@ -85,7 +87,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720017529686</updated>
-      <workItem from="1720017530780" duration="1045000" />
+      <workItem from="1720017530780" duration="1387000" />
     </task>
     <servers />
   </component>
