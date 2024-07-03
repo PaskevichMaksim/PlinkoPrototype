@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
@@ -10,11 +11,14 @@ public class GameUI : MonoBehaviour
   private Button _resetScoreButton;
   [SerializeField]
   private Button _spawnBallButton;
+  [FormerlySerializedAs("_soundToggleButtonButton"),SerializeField]
+  private SoundButton _soundButtonButton;
 
   private void Awake()
   {
     _resetScoreButton.onClick.AddListener(OnResetButtonPressed);
     _spawnBallButton.onClick.AddListener(OnSpawnBallButtonPressed);
+    _soundButtonButton.Button.onClick.AddListener(OnToggleSoundButtonPressed);
   }
 
   private void Start()
@@ -37,5 +41,10 @@ public class GameUI : MonoBehaviour
   private void OnSpawnBallButtonPressed()
   {
    BallSpawner.Instance.SpawnBall();
+  }
+  private void OnToggleSoundButtonPressed()
+  {
+    SoundController.Instance.ToggleMute();
+    _soundButtonButton.UpdateSoundButtonSprite();
   }
 }
