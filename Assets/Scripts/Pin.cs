@@ -12,10 +12,13 @@ public class Pin : MonoBehaviour, IAnimatable
 
   private void OnCollisionEnter2D(Collision2D collision)
   {
-    if (collision.gameObject.TryGetComponent(out Ball _) && !_isAnimating)
+    if (!collision.gameObject.TryGetComponent(out Ball _) || _isAnimating)
     {
-      Animate();
+      return;
     }
+
+    Animate();
+    SoundController.Instance.PlaySound(SoundController.SoundType.Pin);
   }
 
   private void Animate()
