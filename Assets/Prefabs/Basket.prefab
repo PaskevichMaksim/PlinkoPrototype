@@ -316,6 +316,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 0}
   _pointsText: {fileID: 0}
+  animationScaleFactor: 1.2
+  animationDuration: 0.2
 --- !u!1 &2994817051228579663
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,3 +366,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spriteRenderer: {fileID: 8373215919564958163}
   _pointsText: {fileID: 1103432151669336111}
+  animationScaleFactor: 1.2
+  animationDuration: 0.1

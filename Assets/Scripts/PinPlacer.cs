@@ -11,6 +11,8 @@ public class PinPlacer : MonoBehaviour
     private Pin _pinPrefab;
     [SerializeField]
     private int _rows = 10;
+    [SerializeField]
+    private float pinScaleMultiplier = 1.2f; // Множник для збільшення розміру пінів
 
     private float _pinScale;
     private float _topPosition;
@@ -35,7 +37,7 @@ public class PinPlacer : MonoBehaviour
         {
             _rows++;
         }
-        
+
         Initialize();
     }
 
@@ -49,11 +51,11 @@ public class PinPlacer : MonoBehaviour
     private void CalculatePinScaleAndSpacing()
     {
         ScreenScaler screenScaler = ScreenScaler.Instance;
-        
-        _pinScale = screenScaler.ScreenWidth / (_rows + 2) * 0.4f;
-        
+
+        _pinScale = screenScaler.ScreenWidth / (_rows + 2) * .4f* pinScaleMultiplier;
+
         float aspectRatio = screenScaler.ScreenHeight / screenScaler.ScreenWidth;
-        
+
         _pinScale *= Mathf.Lerp(1f, 1.5f, (aspectRatio - 1.5f) / 1.5f);
     }
 
@@ -101,7 +103,7 @@ public class PinPlacer : MonoBehaviour
     {
         return _topPosition;
     }
-    
+
     public float GetBottomPosition()
     {
         return _botPosition;

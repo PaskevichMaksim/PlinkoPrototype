@@ -1,18 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
-public class Pin : MonoBehaviour
+public class Pin : MonoBehaviour, IAnimatable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  [SerializeField]
+  private float _animationScaleFactor = 1.2f;
+  [SerializeField]
+  private float _animationDuration = 0.2f;
 
-    // Update is called once per frame
-    void Update()
+  private bool _isAnimating;
+
+  private void OnCollisionEnter2D(Collision2D collision)
+  {
+    if (collision.gameObject.TryGetComponent(out Ball _) && !_isAnimating)
     {
-        
+      Animate();
     }
+  }
+
+  private void Animate()
+  {
+    _isAnimating = true;
+    transform.DOScale(transform.localScale * _animationScaleFactor, _animationDuration).SetLoops(2, LoopType.Yoyo).OnComplete(() => _isAnimating = false);
+  }
 }

@@ -708,7 +708,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1222936449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -866,6 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pinPrefab: {fileID: 8075670926467454587, guid: 23043205006ff2143b61422c4c3630c6, type: 3}
   _rows: 10
+  pinScaleMultiplier: 1
 --- !u!4 &1513519318
 Transform:
   m_ObjectHideFlags: 0
