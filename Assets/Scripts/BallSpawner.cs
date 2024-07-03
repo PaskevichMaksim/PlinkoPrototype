@@ -2,27 +2,23 @@ using UnityEngine;
 
 public class BallSpawner : MonoBehaviour
 {
-  [SerializeField]
-  private float _spawnInterval = 2f;
+  public static BallSpawner Instance { get; private set; }
+  
   [SerializeField]
   private float _initialForce = 2f;
-
-  private float _timer;
-
-  private void Update()
+  
+  private void Awake()
   {
-    _timer += Time.deltaTime;
-
-    if (!Input.GetKeyDown(KeyCode.Space) && !(_timer >= _spawnInterval))
+    if (Instance == null)
     {
-      return;
+      Instance = this;
+    } else
+    {
+      Destroy(gameObject);
     }
-
-    SpawnBall();
-    _timer = 0f;
   }
-
-  private void SpawnBall()
+  
+  public void SpawnBall()
   {
     const float OFFSET = .5f;
     Vector3 spawnPosition = new Vector3(0, PinPlacer.Instance.GetTopPosition() + OFFSET, 0);

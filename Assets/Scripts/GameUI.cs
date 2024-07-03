@@ -36,7 +36,6 @@ public class GameUI : MonoBehaviour
 
   private void OnSpawnBallButtonPressed()
   {
-    // Тут буде виклик функції для спавну м'ячика
-    // BallSpawner.Instance.SpawnBall(); - приклад виклику
+   BallSpawner.Instance.SpawnBall();
   }
 }
